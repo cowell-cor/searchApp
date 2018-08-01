@@ -10,7 +10,7 @@ git clone https://github.com/cowell-cor/searchApp.git
 
 ### Install Dependencies
 
-npm install
+`npm install`
 
 Behind the scenes this will also call `bower install`. After that, you should find out that you have
 two new folders in your project.
@@ -23,9 +23,9 @@ two new folders in your project.
 We have preconfigured the project with a simple development web server. The simplest way to start
 this server is:```
 
-npm start
+`npm start`
 
-Now browse to the app at [`localhost:8000/index.html`][local-app-url].
+Now browse to the app at [`localhost:8000`].
 
 
 ### Components
