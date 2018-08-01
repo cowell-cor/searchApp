@@ -1,4 +1,4 @@
-```# `Search App` — using Angular JS 1.7x
+# `Search App` — using Angular JS 1.7x
 
 Search the persons in the given list of data, clicking on the selected person will show the rating, description details and send message can be triggered.
 
@@ -8,11 +8,11 @@ To get you started you can simply clone the `repo` repository and install the de
 git clone https://github.com/cowell-cor/searchApp.git
 
 
-```### Install Dependencies```
+### Install Dependencies
 
 npm install
 
-```Behind the scenes this will also call `bower install`. After that, you should find out that you have
+Behind the scenes this will also call `bower install`. After that, you should find out that you have
 two new folders in your project.
 
 * `node_modules` - contains the npm packages for the tools we need
@@ -25,7 +25,7 @@ this server is:```
 
 npm start
 
-```Now browse to the app at [`localhost:8000/index.html`][local-app-url].
+Now browse to the app at [`localhost:8000/index.html`][local-app-url].
 
 
 ### Components
