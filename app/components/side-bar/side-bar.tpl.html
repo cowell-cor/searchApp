@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="components/side-bar/side-bar.css">
+
+<div class="container">
+    <div class="left">
+        <div class="search-box">
+            <input type="text" name="search" class="search-input" ng-model="vm.search" ng-keydown="vm.resetPeople()" placeholder="Search">
+            <span ng-show="vm.search" ng-click="vm.resetSearch()" class="clear-icon">x</span>
+        </div>
+        <ul>
+            <li ng-repeat="people in filteredPeople = (vm.peoples | filter:vm.search)" ng-click="vm.showPeople(people)">
+                <img ng-src="{{people.img}}" />
+                <h3>{{people.name}}</h3>
+                <md-icon class="md-avatar-icon arrow" md-svg-icon="../../icons/arrow.svg"></md-icon>
+            </li>
+        </ul>
+        <span ng-if="!filteredPeople.length" class="error">No data found, please try again!!</span>
+    </div>
+    <div class="right">
+        <right-panel people="vm.people" ng-if="vm.people"></right-panel>
+    </div>
+</div>

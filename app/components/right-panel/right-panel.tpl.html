@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="components/right-panel/right-panel.css">
+<div layout="column" class="right-panel">
+  <div class="left-card">
+    <md-card>
+      <md-card-header>
+        <md-card-avatar>
+          <md-icon class="md-avatar-icon" md-svg-icon="../../icons/face.svg"></md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+          <span class="md-title">{{vm.people.name}}</span>
+          <span class="md-subhead heartContainer">
+            <md-icon class="md-avatar-icon heart" md-svg-icon="../../icons/heart.svg" ng-repeat="heart in [].constructor(vm.people.rating) track by $index"></md-icon>
+            <md-icon class="md-avatar-icon heart" md-svg-icon="../../icons/emptyHeart.svg" ng-repeat="heart in [].constructor(vm.emptyHearts) track by $index"></md-icon>
+          </span>
+        </md-card-header-text>
+        <md-card-actions layout="row" layout-align="start center">
+          <md-button class="md-raised md-primary" ng-click="vm.sendMessage()">Send Message!</md-button>
+          <send-message ng-if="vm.isShow" name="vm.people.name"></send-message>
+        </md-card-actions>
+      </md-card-header>
+      <section class="content">
+        <img ng-src="{{vm.people.img}}" class="md-card-image" alt="Selected Person Image">
+        <div class="content-tbl">
+          <md-table-container>
+            <table md-table md-row-select multiple ng-model="vm.selected" md-progress="promise" class="tblContainer">
+              <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+                <tr md-row>
+                  <th md-column md-numeric>Likes</th>
+                </tr>
+              </thead>
+              <tbody md-body>
+                <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="like in vm.people.Likes  track by $index">
+                  <td md-cell>{{like}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </md-table-container>
+          <md-table-container>
+            <table md-table md-row-select multiple ng-model="vm.selected" md-progress="promise" class="tblContainer">
+              <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+                <tr md-row>
+                  <th md-column md-numeric>Dislikes</th>
+                </tr>
+              </thead>
+              <tbody md-body>
+                <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="dislike in vm.people.Dislikes   track by $index">
+                  <td md-cell>{{dislike}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </md-table-container>
+        </div>
+      </section>
+
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{vm.people.Description}}</span>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+  </div>
+</div>
